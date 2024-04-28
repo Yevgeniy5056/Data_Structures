@@ -26,6 +26,17 @@ public class UserLinkedList {
         size++;
     }
 
+    void insertInTheEnd(String name, String surname) {
+        User node = new User(name, surname);
+        if (isEmpty()) {
+            head = tail = node;
+        } else {
+            tail.next = node;
+            tail = node;
+        }
+        size++;
+    }
+
     void printNames() {
         if (isEmpty()) {
             System.out.println("List is empty");
@@ -50,6 +61,7 @@ public class UserLinkedList {
             return curr;
         }
     }
+
     void getName2(int index) {
 
         if (index >= size) {
