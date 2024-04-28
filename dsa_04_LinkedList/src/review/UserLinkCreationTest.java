@@ -4,10 +4,10 @@ public class UserLinkCreationTest {
 
     public static void main(String[] args) {
 
-        User user1 = new User(1, "Austin");
-        User user2 = new User(2, "Jason");
-        User user3 = new User(3, "Carol");
-        User user4 = new User(4, "Jack");
+        User user1 = new User("Anton", "Austin");
+        User user2 = new User("Dima", "Jason");
+        User user3 = new User("Sasha", "Carol");
+        User user4 = new User("Ura", "Jack");
 
         user1.next = user2;
         user2.next = user3;

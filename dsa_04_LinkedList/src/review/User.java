@@ -1,12 +1,12 @@
 package review;
 
 public class User {
-    int id;
     String name;
+    String surname;
     User next;
 
-    public User(int id, String name) {
-        this.id = id;
+    public User(String name, String surname) {
         this.name = name;
+        this.surname = surname;
     }
 }
