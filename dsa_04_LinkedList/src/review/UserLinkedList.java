@@ -37,4 +37,29 @@ public class UserLinkedList {
             }
         }
     }
+
+    User getName(int index) {
+
+        if (index >= size) {
+            throw new IndexOutOfBoundsException();
+        } else {
+            User curr = head;
+            for (int i = 0; i < index; i++) {
+                curr = curr.next;
+            }
+            return curr;
+        }
+    }
+    void getName2(int index) {
+
+        if (index >= size) {
+            throw new IndexOutOfBoundsException();
+        } else {
+            User curr = head;
+            for (int i = 0; i < index; i++) {
+                curr = curr.next;
+            }
+            System.out.println("index " + index + " is =" + curr.name);
+        }
+    }
 }
