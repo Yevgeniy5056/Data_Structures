@@ -74,4 +74,35 @@ public class UserLinkedList {
             System.out.println("index " + index + " is =" + curr.name);
         }
     }
+
+    void deleteByName(String name) {
+
+        if (isEmpty()) {
+            System.out.println("List is empty");
+        }
+
+        User prev = head;
+        User curr = head;
+        while (curr != null) {
+            if (curr.name.equals(name)) {
+                if (curr == head) {
+                    if (head == tail) {
+                        tail = null;
+                    } else {
+                        head = curr.next;
+                        curr.next = null;
+                    }
+                } else if (curr == tail) {
+                    prev.next = null;
+                    tail = prev;
+                } else {
+                    prev.next = curr.next;
+                    curr.next = null;
+                }
+                size--;
+            }
+            prev = curr;
+            curr = curr.next;
+        }
+    }
 }
