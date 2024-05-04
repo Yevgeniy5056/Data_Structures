@@ -8,6 +8,7 @@ public class MySinglyLinkedList {
     }
 
     public void addFirst(int data) {
+
         var node = new Node(data);
         if (isEmpty()) {
             head = tail = node;
@@ -18,7 +19,33 @@ public class MySinglyLinkedList {
         size++;
     }
 
+    public void removeKthItemFromLast(int k) {
+
+        var pointer1 = head;
+        var pointer2 = head;
+        Node prev = null;
+
+        for (int i = 0; i < k - 1; i++) {
+            pointer2 = pointer2.next;
+        }
+        while (pointer2.next != null) {
+            prev = pointer1;
+            pointer1 = pointer1.next;
+            pointer2 = pointer2.next;
+        }
+        if (pointer1 == head) {
+            head = pointer1.next;
+        } else if (pointer1 == tail) {
+            tail = prev;
+        } else {
+            prev.next = pointer1.next;
+        }
+        size--;
+    }
+
+
     public int getKthItemFromLast(int k) {
+
         var pointer1 = head;
         var pointer2 = head;
 
@@ -33,6 +60,7 @@ public class MySinglyLinkedList {
     }
 
     public void add(int data) {
+
         Node node = new Node(data);
         if (isEmpty()) {
             head = tail = node;
@@ -44,6 +72,7 @@ public class MySinglyLinkedList {
     }
 
     public void deleteById(int id) {
+
         if (isEmpty()) System.out.println("List is empty");
 
         var prev = head;
@@ -88,6 +117,7 @@ public class MySinglyLinkedList {
     }
 
     public void printNodes() {
+
         var current = head;
         while (current != null) {
             if (current.next == null) {
