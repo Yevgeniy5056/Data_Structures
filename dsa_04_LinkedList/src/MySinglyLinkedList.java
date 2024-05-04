@@ -1,5 +1,3 @@
-package CustomSinglyLinkedList;
-
 public class MySinglyLinkedList {
     Node head;
     Node tail;
@@ -18,6 +16,20 @@ public class MySinglyLinkedList {
             head = node;
         }
         size++;
+    }
+
+    public int getKthItemFromLast(int k) {
+        var pointer1 = head;
+        var pointer2 = head;
+
+        for (int i = 0; i < k - 1; i++) {
+            pointer2 = pointer2.next;
+        }
+        while (pointer2.next != null) {
+            pointer1 = pointer1.next;
+            pointer2 = pointer2.next;
+        }
+        return pointer1.id;
     }
 
     public void add(int data) {
@@ -76,7 +88,7 @@ public class MySinglyLinkedList {
     }
 
     public void printNodes() {
-        Node current = head;
+        var current = head;
         while (current != null) {
             if (current.next == null) {
                 System.out.println(current.id + "=> null");

@@ -1,5 +1,3 @@
-package CustomSinglyLinkedList;
-
 public class Node {
     public int id;
     public Node next;
