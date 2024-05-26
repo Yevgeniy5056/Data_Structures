@@ -10,7 +10,7 @@ public class HashMapTestApp {
         System.out.println(myHashMap.get(2));
         myHashMap.remove(2);
         System.out.println(myHashMap.get(2));
-        myHashMap.put(100,30);
+        myHashMap.put(100, 30);
         System.out.println(myHashMap.get(100));
         myHashMap.put(1, 10);
         System.out.println(myHashMap.get(1));
