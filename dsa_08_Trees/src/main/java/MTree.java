@@ -27,4 +27,31 @@ public class MTree {
             }
         }
     }
+
+    void preOrderTraversal(TNode root) {
+
+        if (root == null) return;
+
+        System.out.print(root.val + ", ");
+        preOrderTraversal(root.left);
+        preOrderTraversal(root.right);
+    }
+
+    void inOrderTraversal(TNode root) {
+
+        if (root == null) return;
+
+        inOrderTraversal(root.left);
+        System.out.print(root.val + ", ");
+        inOrderTraversal(root.right);
+    }
+
+    void postOrderTraversal(TNode root) {
+
+        if (root == null) return;
+
+        postOrderTraversal(root.left);
+        postOrderTraversal(root.right);
+        System.out.print(root.val + ", ");
+    }
 }
