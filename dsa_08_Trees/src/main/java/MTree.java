@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class MTree {
     TNode root;
 
@@ -53,5 +56,19 @@ public class MTree {
         postOrderTraversal(root.left);
         postOrderTraversal(root.right);
         System.out.print(root.val + ", ");
+    }
+
+    void levelOrderTraversal(TNode root) {
+
+        if (root == null) return;
+
+        Queue<TNode> q = new LinkedList<>();
+        q.add(root);
+        while (!q.isEmpty()) {
+            TNode temp = q.poll();
+            System.out.print(temp.val + ", ");
+            if (temp.left != null) q.add(temp.left);
+            if (temp.right != null) q.add(temp.right);
+        }
     }
 }
