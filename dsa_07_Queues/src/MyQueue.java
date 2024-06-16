@@ -13,8 +13,8 @@ public class MyQueue<T> {
         return front == null;
     }
 
-    void enqueue(T element) {
-        QNode<T> node = new QNode<>(element);
+    void enqueue(T val) {
+        QNode<T> node = new QNode<>(val);
         if (isEmpty()) {
             front = back = node;
         } else {
