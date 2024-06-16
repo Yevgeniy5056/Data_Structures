@@ -38,28 +38,27 @@ public class LeetCodeTree {
     }
 
     public TreeNode insertIntoBST(TreeNode root, int val) {
-        TreeNode newNode = new TreeNode(val);
+        TreeNode node = new TreeNode(val);
         if (root == null) { // Tree empty
-            root = newNode;
-            return root;
+            return node;
         }
         // Not empty
-        TreeNode current = root;
+        TreeNode curr = root;
         while (true) {
-            if (val < current.val) {
-                if (current.left == null) {
+            if (val < curr.val) {
+                if (curr.left == null) {
                     // insert node here!!!
-                    current.left = newNode;
+                    curr.left = node;
                     return root;
                 }
-                current = current.left;// branch into left sub-tree
+                curr = curr.left;// branch into left sub-tree
             } else {
-                if (current.right == null) {
+                if (curr.right == null) {
                     // insert node here!!!
-                    current.right = newNode;
+                    curr.right = node;
                     return root;
                 }
-                current = current.right;// branch into right sub-tree
+                curr = curr.right;// branch into right sub-tree
             }
         }
     }

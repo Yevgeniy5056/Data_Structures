@@ -1,9 +1,9 @@
 public class SNode<T> {
 
-    public T data;
+    public T val;
     SNode<T> next;
 
-    public SNode(T data) {
-        this.data = data;
+    public SNode(T val) {
+        this.val = val;
     }
 }

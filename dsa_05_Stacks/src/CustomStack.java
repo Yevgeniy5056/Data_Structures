@@ -10,9 +10,9 @@ public class CustomStack<T> {
         return bottom == null;
     }
 
-    public void push(T data) {
+    public void push(T val) {
 
-        var node = new SNode<>(data);
+        SNode<T> node = new SNode<>(val);
         if (isEmpty()) {
             bottom = top = node;
         } else {
@@ -23,23 +23,23 @@ public class CustomStack<T> {
     }
 
     public T peek() {
-        return top.data;
+        return top.val;
     }
 
     public T pop() {
 
-        var peekNode = top.data;
+        T peekNode;
         if (isEmpty()) {
             throw new EmptyStackException();
         }
         // stack has one element
         if (top == bottom) {
-            peekNode = top.data;
+            peekNode = top.val;
             top = bottom = null;
         } else {
             //more than one element
-            peekNode = top.data;
-            var curr = bottom;
+            peekNode = top.val;
+            SNode<T> curr = bottom;
             while (curr.next != top) {
                 curr = curr.next;
             }
