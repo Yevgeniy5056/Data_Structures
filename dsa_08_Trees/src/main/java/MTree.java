@@ -71,4 +71,15 @@ public class MTree {
             if (temp.right != null) q.add(temp.right);
         }
     }
+
+    boolean contains(int val) {
+        if (root == null) return false;
+        TNode curr = root;
+        while (curr != null) {
+            if (val < curr.val) curr = curr.left;
+            else if (val > curr.val) curr = curr.right;
+            else return true;
+        }
+        return false;
+    }
 }

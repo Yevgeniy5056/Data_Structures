@@ -16,5 +16,8 @@ public class TreeApp {
         tree.postOrderTraversal(tree.root);
         System.out.println("\nLevel-Order traversal of the Tree");
         tree.levelOrderTraversal(tree.root);
+        System.out.println();
+        System.out.println(tree.contains(42));
+        System.out.println(tree.contains(23));
     }
 }
