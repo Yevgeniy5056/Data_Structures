@@ -121,9 +121,11 @@ public class MTree {
         if (isLeaf(root)) return root.val;
         return findSomeOfLeaves(root.left) + findSomeOfLeaves(root.right);
     }
-    public int calculateNodeSums(){
+
+    public int calculateNodeSums() {
         return nodeSums(root);
     }
+
     int nodeSums(TNode root) {
         if (root == null) return 0;
         return root.val + nodeSums(root.left) + nodeSums(root.right);
