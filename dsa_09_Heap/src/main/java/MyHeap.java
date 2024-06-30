@@ -8,6 +8,14 @@ public class MyHeap {
         this.items = new int[capacity];
         this.size=0;
     }
+
+    public MyHeap(int[] items) {
+        this.items = new int[items.length];
+        size = items.length;
+        this.items = items;
+        buildHeap();
+    }
+
     public int peek() {
         if (size==0) throw new NoSuchElementException();
         return items[0];
@@ -83,5 +91,20 @@ public class MyHeap {
             System.out.print(items[i]+ ", ");
         }
         System.out.println();
+    }
+
+    public void buildHeap() {
+        int index = (size / 2) - 1;
+        for (int i = index; i >= 0; i--) {
+            heapify(i);
+        }
+    }
+    public void heapify(int index) {
+        // check if the index element is a valid parent
+        if (!isValidParent(index))  {
+            int largestChildIndex = largerChildIndex(index);
+            swap(index,largestChildIndex);
+            heapify(largestChildIndex);
+        }
     }
 }
