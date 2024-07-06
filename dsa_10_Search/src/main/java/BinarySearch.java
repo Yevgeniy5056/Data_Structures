@@ -24,7 +24,7 @@ public class BinarySearch {
         return -1;
     }
 
-    private static int binarySearchRec(int[] array, int data) {
+    public static int binarySearchRec(int[] array, int data) {
         return binarySearchRec(array, data, 0, array.length - 1);
     }
 
