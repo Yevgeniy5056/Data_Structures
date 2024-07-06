@@ -7,6 +7,7 @@ public class BinarySearch {
             array[i] = i;
         }
         System.out.println(binarySearchIterative(array, 5));
+        System.out.println(binarySearchRec(array, 5));
     }
 
     private static int binarySearchIterative(int[] array, int data) {
@@ -21,6 +22,18 @@ public class BinarySearch {
             else left = middle + 1;
         }
         return -1;
+    }
+
+    private static int binarySearchRec(int[] array, int data) {
+        return binarySearchRec(array, data, 0, array.length - 1);
+    }
+
+    private static int binarySearchRec(int[] array, int data, int left, int right) {
+        if (left > right) return -1;
+        int middle = (left + right) / 2;
+        if (array[middle] == data) return middle;
+        if (data < array[middle]) return binarySearchRec(array, data, left, middle - 1);
+        else return binarySearchRec(array, data, middle + 1, right);
     }
 }
 
