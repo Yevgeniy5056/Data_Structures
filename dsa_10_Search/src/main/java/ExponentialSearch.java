@@ -14,6 +14,6 @@ public class ExponentialSearch {
         while (bound < array.length && array[bound] < data) bound *= 2;
         int left = bound / 2;
         int right = Math.min(bound, array.length - 1);
-        return BinarySearch.binarySearchRec(array, data);
+        return BinarySearch.binarySearchRec(array, data, left, right);
     }
 }

@@ -28,7 +28,7 @@ public class BinarySearch {
         return binarySearchRec(array, data, 0, array.length - 1);
     }
 
-    private static int binarySearchRec(int[] array, int data, int left, int right) {
+    public static int binarySearchRec(int[] array, int data, int left, int right) {
         if (left > right) return -1;
         int middle = (left + right) / 2;
         if (array[middle] == data) return middle;
